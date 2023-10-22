@@ -4,6 +4,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import idos from "../../assets/images/icon-pyr.png";
 import { baseUrl } from '@/app/constants/baseUrl';
+import Marquee from "react-fast-marquee";
 
 function Stats() {
     const [UseTotal, SetTotalIDO] = useState('');
@@ -49,10 +50,9 @@ useEffect(() => {
   return (
     <div className="flex gap-10 z-40 w-2/3 mx-auto h-auto items-center justify-center top-0 inset-x-0 mb-20 bg-black capitalize">
       {idosCards.map((item, index) => (
-
-<Card key={index} className="w-[300px] p-4 bg-transparent rounded-3xl backdrop-blur backdrop-brightness-150 ">
+<Card key={index} className="w-[300px] p-4 bg-black rounded-3xl backdrop-blur backdrop-brightness-150 ">
     <Skeleton
-    className='rounded-lg bg-primary-400 before:opacity-100 before:bg-primary-500 after:bg-primary-500 after:opacity-0  before:animate-[shimmer_0.75s_infinite]'
+    className='rounded-lg bg-primary-400 before:opacity-100 before:bg-primary-500 after:bg-primary-500 after:opacity-0  before:animate-[shimmer_0.75s_infinite] bg-blue'
     isLoaded={isLoaded}
     >
 <CardHeader className="flex gap-3">
