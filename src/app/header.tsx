@@ -13,7 +13,6 @@ import { AppDispatch } from '@/redux/store';
 import { baseUrl } from './constants/baseUrl';
 // import { cookies } from 'next/headers';
 import fs from 'fs';
-
 function Header() {
   const router = useRouter()
   const [isScrolled, setIsScrolled] = useState(false);
@@ -115,12 +114,16 @@ function Header() {
 }
   }
 
+
+ 
+
   const menuItems = [
     "Profile",
     "Help & Feedback",
     "Log Out",
   ];
   const bigMenuItems= [
+
     {name:"Projects",hrf:'/'}
     ,
     {name:"Stake",hrf:'/staking'}
@@ -128,14 +131,18 @@ function Header() {
     {name:"Leaderboard",hrf:'/tiers'}
     ,
     {name:"Swap" ,hrf:'/staking'}
+
+
   ]
 
   return (
-    <Navbar isBlurred={false} height={'8em'} maxWidth='xl' className={`z-50 mb-20 bg-transparent capitalize ${
+    <Navbar isBlurred={false} height={'8em'} maxWidth='xl' className={` z-50 mb-20 bg-transparent capitalize  ${
       isScrolled ? 'backdrop-blur-md' : ''
     }`}>
-      <NavbarContent className="flex justify-between items-center w-full">
-        {/* Logo on the left */}
+      <NavbarContent className="sm:hidden" justify="start">
+        <NavbarMenuToggle />
+      </NavbarContent>
+      <NavbarContent className="sm:hidden pr-3 " justify="start">
         <NavbarBrand>
           <Image
             src={logoNew}
@@ -148,22 +155,39 @@ function Header() {
             }}
             alt={'ElysiumLogo'} />
         </NavbarBrand>
-
-        {/* Pages on the right */}
-        <div className="flex gap-7 items-center">
-          {bigMenuItems.map((item, index) => (
-            <NavbarItem key={`${item}-${index}`}>
-              <Link color={"foreground"} href={item.hrf} size="md">
-                {item.name}
-              </Link>
-            </NavbarItem>
-          ))}
-          <NavbarItem>
-            <ConnectWallet switchToActiveChain={true}/> 
-          </NavbarItem>
-        </div>
       </NavbarContent>
+      <NavbarContent className="hidden sm:flex gap-4" justify="start">
+        <NavbarBrand>
+          <Image
+            src={logoNew}
+            className="py-0 mx-0"
+            width={100}
+            height={50}
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              router.push('/');
+            }}
+            alt={'ElysiumLogo'} />
+        </NavbarBrand>
+      </NavbarContent >
+      <NavbarContent className="hidden sm:flex gap-7 capitalize items-center" justify="start">
+      {bigMenuItems.map((item, index) => (
+          <NavbarItem key={`${item}-${index}`}>
+            <Link color={"foreground"} href={item.hrf} size="md">
+              {item.name}
+            </Link>
+          </NavbarItem>
+        ))}
+      <NavbarItem>
 
+  
+          <ConnectWallet switchToActiveChain={true}/> 
+          
+
+
+
+        </NavbarItem>
+      </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
@@ -181,6 +205,8 @@ function Header() {
         ))}
       </NavbarMenu>
     </Navbar>
+
+
   )
 }
 
