@@ -9,9 +9,10 @@ function Intro() {
         <figure className="text-white text-center mb-0">
           <figcaption className="mx-auto">
 
-            <h2 className=" Roboto-Light font-bold text-7xl w-2/4 mb-10 mx-auto mt-10 text-gradient">       
-            Scroll's Community Launchpad
-            </h2>
+          <h2 className="Roboto-Light font-bold text-7xl w-2/4 mb-10 mx-auto mt-10 text-gradient">       
+    Scroll&apos;s Community Launchpad
+</h2>
+
             <p className="text-center w-2/3 mx-auto ">
             Scrollpad brings your ideas to life. We connect leading creators with our community, showcasing fresh concepts and innovative designs.
             </p>
