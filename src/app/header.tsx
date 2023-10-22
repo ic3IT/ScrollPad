@@ -13,109 +13,9 @@ import { AppDispatch } from '@/redux/store';
 import { baseUrl } from './constants/baseUrl';
 // import { cookies } from 'next/headers';
 import fs from 'fs';
+
 function Header() {
-  const router = useRouter()
-  const [isScrolled, setIsScrolled] = useState(false);
-  const connectedWallet=useWallet();
-    const [Imagee, setImage] = useState("");
-  const [LoggedUser,setLoggedUser]=useState<any>();
-  const connectedAddress = useAddress();
-  const dispatch = useDispatch<AppDispatch>();
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
-  const handleConnect=()=>{
-    fetch('/api/cookies/',{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        isAuth:false,
-      }),
-    });
-  }
-  const handleDisconnect= () => {
-    fetch('/api/cookies/',{
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        isAuth:false,
-      }),
-    });
-  }
-
-  const handleWalletConnect=async ()=>{
-    alert('success wallet connect');
-  }
-  useEffect(() => {
-    connectedWallet?.on('disconnect',handleDisconnect)
-       
- if(connectedAddress){
- handleConnect()
-  getAvatarData()
-}
-    
-    window.addEventListener('scroll', handleScroll);
-    getAvatarData();
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-     
-
-    };
-  }, [connectedAddress]);
-  connectedWallet?.on('connect',handleWalletConnect);
-  const getAvatarData=()=>{
-    if(connectedAddress) {
-      fetch(`${baseUrl}/getVerifyUser`, {
-        cache:'force-cache',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ address: connectedAddress }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          // console.log("hello User", data);
-          if (data.response) {
-            setImage(
-              btoa(
-                new Uint8Array(data.response.userDP.data.data).reduce(function (
-                  data,
-                  byte
-                ) {
-                  return data + String.fromCharCode(byte);
-                },
-                '')
-              )
-            );
-           dispatch(connectWalletRedux(data));
-            setLoggedUser(data.response);
-          } else{setLoggedUser({
-            address:'Not Set',
-            userName:'Not Set'});
-            setImage(demoImage.src)
-          }
-          
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-      
-
-}
-  }
-
-
- 
+  // ... your useState, useEffect, and other logic ...
 
   const menuItems = [
     "Profile",
@@ -123,28 +23,21 @@ function Header() {
     "Log Out",
   ];
   const bigMenuItems= [
-
-    {name:"IDO LAUNCHPAD",hrf:'/'}
+    {name:"Projects",hrf:'/'}
     ,
-    {name : "NFT LAUNCHPAD",hrf:'/nftLaunchpad'}
+    {name:"Stake",hrf:'/staking'}
     ,
-    {name:"GETTING STARTED",hrf:'/#gettingStarted'}
+    {name:"Leaderboard",hrf:'/tiers'}
     ,
-    {name:"TIERS",hrf:'/tiers'}
-    ,
-    {name:"STAKING" ,hrf:'/staking'}
-
-
+    {name:"Swap" ,hrf:'/staking'}
   ]
 
   return (
-    <Navbar isBlurred={false} height={'8em'} maxWidth='xl' className={` z-50 mb-20 bg-transparent capitalize  ${
+    <Navbar isBlurred={false} height={'8em'} maxWidth='xl' className={`z-50 mb-20 bg-transparent capitalize ${
       isScrolled ? 'backdrop-blur-md' : ''
     }`}>
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle />
-      </NavbarContent>
-      <NavbarContent className="sm:hidden pr-3 " justify="start">
+      <NavbarContent className="flex justify-between items-center w-full">
+        {/* Logo on the left */}
         <NavbarBrand>
           <Image
             src={logoNew}
@@ -157,71 +50,22 @@ function Header() {
             }}
             alt={'ElysiumLogo'} />
         </NavbarBrand>
-      </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-4" justify="start">
-        <NavbarBrand>
-          <Image
-            src={logoNew}
-            className="py-0 mx-0"
-            width={100}
-            height={50}
-            style={{ cursor: "pointer" }}
-            onClick={() => {
-              router.push('/');
-            }}
-            alt={'ElysiumLogo'} />
-        </NavbarBrand>
-      </NavbarContent >
-      <NavbarContent className="hidden sm:flex gap-7 capitalize" justify="start">
-      {bigMenuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`}>
-            <Link color={"foreground"} href={item.hrf} size="sm">
-              {item.name}
-            </Link>
+
+        {/* Pages on the right */}
+        <div className="flex gap-7 items-center">
+          {bigMenuItems.map((item, index) => (
+            <NavbarItem key={`${item}-${index}`}>
+              <Link color={"foreground"} href={item.hrf} size="md">
+                {item.name}
+              </Link>
+            </NavbarItem>
+          ))}
+          <NavbarItem>
+            <ConnectWallet switchToActiveChain={true}/> 
           </NavbarItem>
-        ))}
-      <NavbarItem>
-
-  
-          <ConnectWallet switchToActiveChain={true} btnTitle='CONNECT WALLET' detailsBtn={()=>{
-            return (
-<Dropdown placement="bottom-start">
-        <DropdownTrigger>
-          <User
-            as="button"
-            avatarProps={{
-              isBordered: true,
-              src:`data:image/png;base64,${Imagee}`,
-            }}
-            className="transition-transform"
-            description={`${LoggedUser?.address ?   LoggedUser?.address?.slice(0,5)+'...'+LoggedUser?.address?.slice(37,42):'Not Set ' }  `}
-            name={`${LoggedUser?.userName ? LoggedUser?.userName : "Not Set "}`}
-          />
-        </DropdownTrigger>
-        <DropdownMenu aria-label="User Actions" variant="flat">
-          <DropdownItem  key="Profile">
-            <Link href={`/profile`} >Profile</Link>
-          </DropdownItem>
-          <DropdownItem key="help_and_feedback">
-            Help & Feedback
-          </DropdownItem>
-          <DropdownItem key="logout" color="danger" onPress={()=>{
-            connectedWallet?.disconnect()
-            router.push('/')
-          }
-            }>
-            Log Out
-          </DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
-            )
-          }}/> 
-          
-
-
-
-        </NavbarItem>
+        </div>
       </NavbarContent>
+
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
@@ -239,8 +83,6 @@ function Header() {
         ))}
       </NavbarMenu>
     </Navbar>
-
-
   )
 }
 
