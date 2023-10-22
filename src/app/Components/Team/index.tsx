@@ -18,12 +18,7 @@ function OurTeam() {
           width={300}
         />
       </CardBody>
-      <CardFooter className="pb-0 pt-2 px-4  flex-col items-center gap-4">
-      <h1 className="font-bold text-2xl">Jamie Thomson</h1>
-        <p className="uppercase font-bold text-lg">Daily Mix</p>
-      
-       
-      </CardFooter>
+     
     </Card>
     </div>
   )

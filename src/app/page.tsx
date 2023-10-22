@@ -26,7 +26,6 @@ const IdosData:{apiUrl:any,apiUrlPaginated:any, IntroTitle:any, bgImageSrc:any,l
     <LaunchProject/>
     <ChooseUs/>
     <WelcomeTo/>
-    <OurTeam/>
     </div>
   )
 }

@@ -43,7 +43,7 @@ useEffect(() => {
   const idosCards:{title:string,value:string}[]=[
     {title:'TOTAL PROJECTS',value:UseTotal},
     {title:'INPROGRESS PROJECTS',value:UseInprogress},
-    {title:'UPCOMMING PROJECTS',value:UseUpComing},
+    {title:'UPCOMING PROJECTS',value:UseUpComing},
     {title:'COMPLETED PROJECTS',value:UseCompleted}
   ]
   return (

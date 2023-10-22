@@ -3,7 +3,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { ThirdwebProvider, metamaskWallet, walletConnect } from "@thirdweb-dev/react";
 import {Elysium,ElysiumTestnet} from '@thirdweb-dev/chains'
 import React, { createContext } from "react";
-import logo from '../../assets/images/elysium-logo-launch.png'
+import logo from '../../assets/images/scrolliumlogo.png'
 import LenisProvider from "./LanisProvider";
 import { ReduxProvider } from "@/redux/provider";
 
@@ -15,7 +15,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
 
     const activeChain=ElysiumTestnet;
     const walletConfig= {
-    projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID,
     chainId: activeChain.chainId as number,
     qrcode: true,
   };
@@ -25,11 +24,11 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
        /**
        * the name of your app
        */
-       name: 'Elysium',
+       name: 'ScrollPad',
        /**
         * the url where your app is hosted
         */
-       url: 'elysium-launchpad-investorpanel-nft-dev.vulcanforged.com',
+       url: 'https://scroll-pad.vercel.app/',
        /**
         * optional - a description of your app
         */
@@ -49,9 +48,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
       
         <ThirdwebProvider
         activeChain={activeChain}
-        clientId={process.env.NEXT_PUBLIC_THIRD_WEB_CLIENT_ID}
         supportedChains={[Elysium,ElysiumTestnet]}
-        supportedWallets={[walletConnect(walletConfig), metamaskWallet()]}
         autoSwitch={true}
         autoConnect={true}
         dAppMeta={dAppMeta}
