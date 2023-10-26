@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'ScrollPad: The Leading IDO Launchpad on Scroll zkEVM',
   description: 'ScrollPad is a decentralized community launchpad enabling projects to secure funding and offer safety to early-stage investors. Stake Scroll tokens to gain priority access to promising initiatives.',
   icons: {
-    icon: '/icon.png',
+    icon: '/favicon.ico',
   },
 }
 

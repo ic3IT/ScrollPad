@@ -10,6 +10,10 @@ import LaunchProject from './Components/LaunchProject'
 import ChooseUs from './Components/ChooseUs'
 import WelcomeTo from './Components/WelcomeTo'
 import OurTeam from './Components/Team'
+import Marquee from 'react-fast-marquee'
+import Image from 'next/image'
+import ProjectScroll from './Components/ProjectScroll'
+
 export default function Home() {
 const IdosData:{apiUrl:any,apiUrlPaginated:any, IntroTitle:any, bgImageSrc:any,learnMore:any}[]=[
   {apiUrl:`${baseUrl.baseUrl}/getfirstActiveIDOs`,apiUrlPaginated:`${baseUrl.baseUrl}/getActiveIDOsPaginated`,IntroTitle:'Active Projects',bgImageSrc:activee.src,learnMore:'/ido/active'},
@@ -20,9 +24,7 @@ const IdosData:{apiUrl:any,apiUrlPaginated:any, IntroTitle:any, bgImageSrc:any,l
    <div className='w-full'> 
     <Intro/>
     <Stats/>
-    {IdosData.map((item, index) => (
-<IdoIntro key={index} apiUrl={item.apiUrl} apiUrlPaginated={item.apiUrlPaginated} IntroTitle={item.IntroTitle} bgImageSrc={item.bgImageSrc} learnMore={item.learnMore}/>
-    ))}
+    <ProjectScroll/>
     <LaunchProject/>
     <ChooseUs/>
     <WelcomeTo/>

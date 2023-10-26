@@ -126,11 +126,11 @@ function Header() {
 
     {name:"Projects",hrf:'/'}
     ,
-    {name:"Stake",hrf:'/staking'}
+    {name:"Stake",hrf:'/'}
     ,
-    {name:"Leaderboard",hrf:'/tiers'}
+    {name:"Leaderboard",hrf:'/'}
     ,
-    {name:"Swap" ,hrf:'/staking'}
+    {name:"Swap" ,hrf:'/'}
 
 
   ]

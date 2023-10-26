@@ -5,15 +5,13 @@ function WelcomeTo() {
 
 <div id='welcome' className="flex justify-center items-center h-screen px-40">
       <div className="grid grid-cols-2 grid-rows-2 gap-16 justify-center items-center">
-        <div className='flex flex-col justify-center items-center gap-10'>
-        
-          <h3 className=" text-5xl font-bold">Welcome to Elysium Launchpad!</h3>
-          <p className="mb-0 text-xl">
-            Elysium launch platform are a blockchain project launchpad
-            focused on growing the Elysium ecosystem and the metaverse.
-          </p>
-       
-        </div>
+      <div className='flex flex-col justify-center gap-10'>
+    <h3 className="text-6xl font-bold">Welcome to Scrollpad!</h3>
+    <p className="mb-0 text-xl">
+    Scrollpad is a dedicated launchpad, supporting the introduction of new projects to enhance the Scroll ecosystem.
+    </p>
+</div>
+
         <div className='flex justify-center items-center'></div>
         <div className="flex flex-col justify-center items-start gap-6">
           <span>

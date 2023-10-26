@@ -52,7 +52,7 @@ async function Tiers() {
                             <h1 className=' text-5xl font-bold'>The New Tier System</h1>
                         </div>
                         <div className='detail1'>
-                            <p className=' mb-12'>The next tier system of Elysium Launchpad proposes a 9 tier system that works according to “Pool Weight” system per wallet in each tier; rather than our old broken system where we were dividing the allocations in between 3 tiers regardless of how many wallets there were in each tier.</p>
+                            <p className=' mb-12'>The next tier system of Scrollpad proposes a 9 tier system that works according to “Pool Weight” system per wallet in each tier; rather than our old broken system where we were dividing the allocations in between 3 tiers regardless of how many wallets there were in each tier.</p>
                             <p>Pool weight system derives its power from mathematical formulas that creates a more fair model, with more incentives for those who want to get more allocations from gaming projects we will launch at our Launchpad.</p>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ async function Tiers() {
                             <h1 className=' text-5xl font-bold'>The New Tier System</h1>
                         </div>
                         <div className='detail1'>
-                            <p className=' mb-12'>The next tier system of Elysium Launchpad proposes a 9 tier system that works according to “Pool Weight” system per wallet in each tier; rather than our old broken system where we were dividing the allocations in between 3 tiers regardless of how many wallets there were in each tier.</p>
+                            <p className=' mb-12'>The next tier system of Scrollpad proposes a 9 tier system that works according to “Pool Weight” system per wallet in each tier; rather than our old broken system where we were dividing the allocations in between 3 tiers regardless of how many wallets there were in each tier.</p>
                             <p>Pool weight system derives its power from mathematical formulas that creates a more fair model, with more incentives for those who want to get more allocations from gaming projects we will launch at our Launchpad.</p>
                         </div>
                     </div>
@@ -107,7 +107,7 @@ async function Tiers() {
                             <h1 className=' text-5xl font-bold'>The New Tier System</h1>
                         </div>
                         <div className='detail1'>
-                            <p className=' mb-12'>The next tier system of Elysium Launchpad proposes a 9 tier system that works according to “Pool Weight” system per wallet in each tier; rather than our old broken system where we were dividing the allocations in between 3 tiers regardless of how many wallets there were in each tier.</p>
+                            <p className=' mb-12'>The next tier system of Scrollpad proposes a 9 tier system that works according to “Pool Weight” system per wallet in each tier; rather than our old broken system where we were dividing the allocations in between 3 tiers regardless of how many wallets there were in each tier.</p>
                             <p>Pool weight system derives its power from mathematical formulas that creates a more fair model, with more incentives for those who want to get more allocations from gaming projects we will launch at our Launchpad.</p>
                         </div>
                     </div>

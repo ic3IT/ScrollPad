@@ -467,3 +467,6 @@ body {
           -webkit-background-clip: text;
           color: transparent;
       }
+      .text-green-custom {
+        color: #16a34a;
+      }
