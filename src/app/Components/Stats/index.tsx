@@ -17,10 +17,10 @@ useEffect(() => {
       axios
         .get(`${baseUrl}/allIDOsCnt`)
         .then(function (response) {
-          SetTotalIDO(response.data.data.total);
+          SetTotalIDO('0');
           SetInprogressIDO(response.data.data.InProgress);
           SetUpComingIDO(response.data.data.UpComing);
-          SetCompletedIDO(response.data.data.Completed);
+          SetCompletedIDO('0');
         }).then(()=>{
             setIsLoaded(true)
         })

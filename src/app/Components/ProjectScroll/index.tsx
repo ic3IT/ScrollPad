@@ -28,10 +28,10 @@ function ProjectScroll() {
         <div className="flex flex-col items-center mr-20">
             <Image src={project4} alt="Description" width={120} height={120} />
         </div>
-        <div className="flex flex-col items-center mr-20 ">
+        <div className="flex flex-col items-center mr-20">
             <Image src={project5} alt="Description" width={120} height={120} />
         </div>
-        <div className="flex flex-col items-center mr-20 ">
+        <div className="flex flex-col items-center mr-20">
             <Image src={project6} alt="Description" width={120} height={120} />
         </div>
     </div>
