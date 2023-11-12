@@ -24,7 +24,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
        /**
        * the name of your app
        */
-       name: 'ScrollPad',
+       name: 'Venpad',
        /**
         * the url where your app is hosted
         */

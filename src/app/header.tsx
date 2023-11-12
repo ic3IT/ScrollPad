@@ -115,7 +115,6 @@ function Header() {
   }
 
 
- 
 
   const menuItems = [
     "Profile",
@@ -136,13 +135,14 @@ function Header() {
   ]
 
   return (
-    <Navbar isBlurred={false} height={'8em'} maxWidth='xl' className={` z-50 mb-20 bg-transparent capitalize  ${
+    <Navbar isBlurred={false} height={'8em'} maxWidth='xl' className={` z-50 mb-12 bg-transparent capitalize  ${
       isScrolled ? 'backdrop-blur-md' : ''
     }`}>
-      <NavbarContent className="sm:hidden" justify="start">
+      {/* Left-aligned items */}
+      <NavbarContent className="sm:hidden justify-start" >
         <NavbarMenuToggle />
       </NavbarContent>
-      <NavbarContent className="sm:hidden pr-3 " justify="start">
+      <NavbarContent className="sm:hidden pr-3 justify-start">
         <NavbarBrand>
           <Image
             src={logoNew}
@@ -150,13 +150,13 @@ function Header() {
             width={100}
             height={50}
             style={{ cursor: "pointer" }}
-            onClick={() => {
-              router.push('/');
-            }}
+            onClick={() => router.push('/')}
             alt={'ElysiumLogo'} />
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-4" justify="start">
+
+      {/* Center or right-aligned items */}
+      <NavbarContent className="hidden sm:flex gap-4 justify-end ml-auto">
         <NavbarBrand>
           <Image
             src={logoNew}
@@ -164,38 +164,28 @@ function Header() {
             width={100}
             height={50}
             style={{ cursor: "pointer" }}
-            onClick={() => {
-              router.push('/');
-            }}
+            onClick={() => router.push('/')}
             alt={'ElysiumLogo'} />
         </NavbarBrand>
-      </NavbarContent >
-      <NavbarContent className="hidden sm:flex gap-7 capitalize items-center" justify="start">
-      {bigMenuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`}>
-            <Link color={"foreground"} href={item.hrf} size="md">
+        {bigMenuItems.map((item, index) => (
+          <NavbarItem key={`${item.name}-${index}`}>
+             <Link color={"foreground"} href={item.hrf} size="md">
               {item.name}
             </Link>
           </NavbarItem>
         ))}
-      <NavbarItem>
-
-  
-          <ConnectWallet switchToActiveChain={true}/> 
-          
-
-
-
+        <NavbarItem>
+          <ConnectWallet switchToActiveChain={true}/>
         </NavbarItem>
       </NavbarContent>
+
+      {/* Mobile menu */}
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               className="w-full"
-              color={
-                index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
+              color={index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"}
               href=""
               size="lg"
             >
@@ -205,7 +195,6 @@ function Header() {
         ))}
       </NavbarMenu>
     </Navbar>
-
 
   )
 }

@@ -12,8 +12,8 @@ import Footer from './footer';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/ReactToastify.min.css";
 export const metadata: Metadata = {
-  title: 'ScrollPad: The Leading IDO Launchpad on Scroll zkEVM',
-  description: 'ScrollPad is a decentralized community launchpad enabling projects to secure funding and offer safety to early-stage investors. Stake Scroll tokens to gain priority access to promising initiatives.',
+  title: 'Venpad: The Leading IDO Launchpad on Scroll zkEVM',
+  description: 'Venpad is a decentralized community launchpad enabling projects to secure funding and offer safety to early-stage investors. Stake Scroll tokens to gain priority access to promising initiatives.',
   icons: {
     icon: '/favicon.ico',
   },

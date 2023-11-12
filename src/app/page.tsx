@@ -13,6 +13,7 @@ import OurTeam from './Components/Team'
 import Marquee from 'react-fast-marquee'
 import Image from 'next/image'
 import ProjectScroll from './Components/ProjectScroll'
+import Community from './Components/Community'
 
 export default function Home() {
 const IdosData:{apiUrl:any,apiUrlPaginated:any, IntroTitle:any, bgImageSrc:any,learnMore:any}[]=[
@@ -25,6 +26,7 @@ const IdosData:{apiUrl:any,apiUrlPaginated:any, IntroTitle:any, bgImageSrc:any,l
     <Intro/>
     <Stats/>
     <ProjectScroll/>
+    <Community/>
     <LaunchProject/>
     <ChooseUs/>
     <WelcomeTo/>

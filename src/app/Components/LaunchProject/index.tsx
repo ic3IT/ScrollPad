@@ -10,8 +10,8 @@ function LaunchProject() {
 <div className="flex flex-wrap mt-20 mb-20 justify-center" >
 
   <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 p-4 justify-center">
-    <h2 className="mb-5 text-7xl font-bold ">Launch a Project on Scroll!</h2>
-    <p>ScrollPad is a platform that helps and advises project teams on how to best issue and launch their project. We provide a full-service offering starting from advisory services from before the project is even issued, to post-release support. Please contact Admin for more information.</p>
+    <h2 className="mb-5 text-7xl font-bold ">Launch a Project on Ven!</h2>
+    <p>Venpad is a platform that helps and advises project teams on how to best issue and launch their project. We provide a full-service offering starting from advisory services from before the project is even issued, to post-release support. Please contact Admin for more information.</p>
   </div>
   <div className="p-4">
     <Image 
